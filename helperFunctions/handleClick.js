@@ -1,4 +1,7 @@
-export const clickedValues = [];
+import { compareValues } from "./checkToMatch";
+import { winningWord } from "./showWordsArea";
+const clickedValues = [];
+
 
 const handleClick = (arr) => {
     arr.map(item => {
@@ -9,8 +12,9 @@ const handleClick = (arr) => {
 }
 
 const handleClickBehaviour = (e, item) => {
-    item.classList.add("changeClick")
-    clickedValues.push(e.target.innerText)
+        item.classList.add("changeClick")
+        clickedValues.push(e.target.innerText)
+    compareValues(winningWord,clickedValues)
 }
 
 export default handleClick 
