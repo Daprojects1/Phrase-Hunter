@@ -51,3 +51,7 @@ body {
 .main-span {
   visibility: hidden;
 }
+
+.lives {
+  font-size: 25px;
+}
