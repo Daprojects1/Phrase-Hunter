@@ -4,7 +4,11 @@ let life = 5
 const falseArr = [];
 let a = 1;
 
-console.log(winningWord)
+
+const reload = () => {
+    return location.reload()
+}
+
 export function compareValues(winningArr, clickedArr, target) {
     falseArr.length = 0;
     if (!(winningWord.word.includes(target.innerHTML))) life--
@@ -17,7 +21,14 @@ export function compareValues(winningArr, clickedArr, target) {
         }
     })
     if (life === 0) {
-        document.querySelector(".mainBoard").innerHTML="<h2 class=main-h2>You failed, try again </h2>"
+        const mainBoard = document.querySelector(".mainBoard")
+        mainBoard.classList.add("flex")
+        mainBoard.innerHTML=`<h2 class=main-h2>Sorry you failed the word was: <span class=wordSpan>${winningWord.word}</span></h2>`
+        const btn = document.createElement("button")
+        btn.innerText = "retry"
+        btn.classList.add("modalBtn")
+        mainBoard.appendChild(btn)
+        btn.addEventListener("click", reload)
     }
     if (falseArr.length === 0) {
         const button = document.createElement("button")
@@ -35,7 +46,7 @@ export function compareValues(winningArr, clickedArr, target) {
         body.appendChild(div)
         const mainBoard = document.querySelector(".mainBoard")
         mainBoard.classList.remove("mainBoard")
-        button.addEventListener("click", () => location.reload());
+        button.addEventListener("click", reload );
     }
 }
 

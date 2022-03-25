@@ -84,3 +84,15 @@ body {
   color: white;
   background-color: rgb(32, 15, 32);
 }
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wordSpan {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
