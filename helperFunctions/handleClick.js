@@ -14,7 +14,7 @@ const handleClick = (arr) => {
 const handleClickBehaviour = (e, item) => {
         item.classList.add("changeClick")
         clickedValues.push(e.target.innerText)
-    compareValues(winningWord,clickedValues)
+    compareValues(winningWord.wordDomElement,clickedValues, e.target)
 }
 
 export default handleClick 

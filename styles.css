@@ -12,7 +12,7 @@ body {
   margin: 0 auto;
   width: 80vw;
   max-width: 900px;
-  background-color: rgb(221, 217, 217);
+  background-color: rgba(221, 217, 217, 0.5);
   height: 500px;
   padding: 20px;
 }
@@ -54,4 +54,33 @@ body {
 
 .lives {
   font-size: 25px;
+}
+
+.modal {
+  width: 90vw;
+  max-width: 600px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.m-color {
+  background-color: rgba(121, 121, 121, 0.75);
+}
+
+.modalBtn {
+  width: 100px;
+  height: 40px;
+  color: white;
+  background-color: rgb(32, 15, 32);
 }

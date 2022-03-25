@@ -6,14 +6,18 @@ export let displayWords = {
     index: 0,
     isCompleted: true
 };
-export const winningWord = []
+export const winningWord = {
+    wordDomElement: [],
+    word:""
+}
 
 if (displayWords.isCompleted) {
     const word = randomWords[displayWords.index]
-    displayLetters(word.split(""), wordsArea, winningWord)
+    winningWord.word = word
+    displayLetters(word.split(""), wordsArea, winningWord.wordDomElement)
 }
 
-winningWord.map(item => {
+winningWord.wordDomElement.map(item => {
     const letter = item.innerText;
     const span = document.createElement("span")
     span.innerText = letter;
