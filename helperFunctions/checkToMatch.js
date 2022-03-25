@@ -8,6 +8,24 @@ let a = 1;
 const reload = () => {
     return location.reload()
 }
+const showModal = () => {
+    const button = document.createElement("button")
+    const h2 = document.createElement("h2")
+    h2.classList.add("main-h2")
+    h2.innerText = "Nice one"
+    button.innerText = "Restart"
+    button.classList.add("modalBtn")
+    const div = document.createElement("div")
+    div.appendChild(button)
+    div.appendChild(h2)
+    div.classList.add("modal")
+    const body = document.querySelector("body")
+    body.classList.add("m-color");
+    body.appendChild(div)
+    const mainBoard = document.querySelector(".mainBoard")
+    mainBoard.classList.remove("mainBoard")
+    button.addEventListener("click", reload );
+}
 
 export function compareValues(winningArr, clickedArr, target) {
     falseArr.length = 0;
@@ -31,22 +49,6 @@ export function compareValues(winningArr, clickedArr, target) {
         btn.addEventListener("click", reload)
     }
     if (falseArr.length === 0) {
-        const button = document.createElement("button")
-        const h2 = document.createElement("h2")
-        h2.classList.add("main-h2")
-        h2.innerText = "Nice one"
-        button.innerText = "Restart"
-        button.classList.add("modalBtn")
-        const div = document.createElement("div")
-        div.appendChild(button)
-        div.appendChild(h2)
-        div.classList.add("modal")
-        const body = document.querySelector("body")
-        body.classList.add("m-color");
-        body.appendChild(div)
-        const mainBoard = document.querySelector(".mainBoard")
-        mainBoard.classList.remove("mainBoard")
-        button.addEventListener("click", reload );
+        setTimeout(showModal, 600)
     }
 }
-
